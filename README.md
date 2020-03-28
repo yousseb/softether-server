@@ -307,13 +307,16 @@ if you wish. You can do this later, too. Click "Exit" when you're done
 10. You're all set
 
 At this point, you should test the IPSec/L2TP connection by configuring a client.
-Try any of the following clients, then continue to the configuration of the "Let's Encrypt" certificate in  [Certificate Setup](#6-certificate-setup).
+Try any of the following clients:
  
 - [Windows 10 Client Configuration](#8-windows-10-client-configuration)
 - [iOS Client Configuration](#9-ios-client-configuration)
 - [MacOS Client Configuration](#10-macos-client-configuration)
 - [Android Client Configuration](#11-android-client-configuration)
 - [Ubuntu 19 Client Configuration](#12-ubuntu-19-client-configuration)
+
+Once you've verified that the IPSec/L2TP connection works, proceed to the configuration of the "Let's Encrypt" 
+certificate in [Certificate Setup](#6-certificate-setup).
 
 ---
 ##  6. Certificate Setup
@@ -396,7 +399,7 @@ In the main script for Server Manager, click "OpenVPN / MS-SSTP Setting". It sho
 Ensure the "Enable MS-SSTP VPN Clone Server Function" is checked and click OK. You can now use this from Windows 7 and above
 by simply changing the connection type to Automatic. 
 
-   > Note: When you connect from Windows, you must use the hostname instead of the IP so that SSL verification doesn't fail
+   > Note: When you connect from Windows, you must use the hostname instead of the IP so that SSL validation doesn't fail
    > Note for Mac users: There are multiple SSTP clients available for download that you can use with this feature. 
 
 ---
