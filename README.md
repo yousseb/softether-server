@@ -309,11 +309,11 @@ if you wish. You can do this later, too. Click "Exit" when you're done
 At this point, you should test the IPSec/L2TP connection by configuring a client.
 Try any of the following clients, then continue to the configuration of the "Let's Encrypt" certificate in  [Certificate Setup](#6-certificate-setup).
  
-1. [Windows 10 Client Configuration](#8-windows-10-client-configuration)
-2. [iOS Client Configuration](#9-ios-client-configuration)
-3. [MacOS Client Configuration](#10-macos-client-configuration)
-4. [Android Client Configuration](#11-android-client-configuration)
-5. [Ubuntu 19 Client Configuration](#12-ubuntu-19-client-configuration)
+- [Windows 10 Client Configuration](#8-windows-10-client-configuration)
+- [iOS Client Configuration](#9-ios-client-configuration)
+- [MacOS Client Configuration](#10-macos-client-configuration)
+- [Android Client Configuration](#11-android-client-configuration)
+- [Ubuntu 19 Client Configuration](#12-ubuntu-19-client-configuration)
 
 ---
 ##  6. Certificate Setup
