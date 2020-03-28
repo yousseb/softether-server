@@ -375,6 +375,10 @@ If this is the case, your server is ready to be used with SSTP and even current 
 ---
 ## 7. SSTP Setup
 
+   > NOTE: In order for SSTP to work, you will need to setup a certificate as defined in the previous step ([Certificate Setup](#6-certificate-setup))
+   > and to access the server by the hostname instead of the IP address. SSTP will verify the certificate. While IPSec/L2TP can use self-signed certificate
+   > which comes with the default installation, SSTP will not! 
+
 In the main script for Server Manager, click "OpenVPN / MS-SSTP Setting". It should open the following screen
 
    > ![SSTP Setup](images/sstp.png "SSTP Setup")
