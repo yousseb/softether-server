@@ -452,4 +452,22 @@ by simply changing the connection type to Automatic.
 
 ---
 ## 11. Android Client Configuration
-TODO
+1. Open the Settings App, tap "VPN" and tap "Add VPN Profile"
+
+    > ![Android Setup](images/android-1.png "Android Setup")
+
+2. In the "Edit VPN Profile" screen
+    1. Name: Name of the connection
+    2. Type: Select L2TP/IPSec PSK
+    3. Server address: IP or hostname of the VPN server
+    4. L2TP Secret: leave empty
+    5. IPSec Identifier: leave empty
+    6. IPSec pre shared key: Pre-shared key from step 5.4
+    7. Username: Username from step 5.6
+    8. Password: Password from step 5.6
+
+    > ![Android Setup](images/android-2.png "Android Setup")
+
+3. Save and Connect
+
+
