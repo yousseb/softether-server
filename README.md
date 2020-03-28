@@ -21,17 +21,17 @@ This will cost you about $5/month. The differences between this tutorial and buy
 
 ## Table of contents
 
-1. Creating the Droplet
-2. Performing Initial Server Setup
-3. Server Hardening
-4. SoftEther Server Installation
-5. IPsec/L2TP Setup (SoftEther Server Administration GUI)
-6. Certificate Setup
-7. SSTP Setup
-8. Windows Client Configuration
-9. iOS Client Configuration
-10. MacOS Client Configuration
-11. Android Client Configuration
+1. [Creating the Droplet](#1-creating-the-droplet)
+2. [Performing Initial Server Setup](#2-performing-initial-server-setup)
+3. [Server Hardening](#3-server-hardening)
+4. [SoftEther Server Installation](#4-softether-server-installation)
+5. [IPsec/L2TP Setup (SoftEther Server Administration GUI)](#5-ipsecl2tp-setup-softether-server-administration-gui)
+6. [Certificate Setup](#6-certificate-setup)
+7. [SSTP Setup](#7-sstp-setup)
+8. [Windows 10 Client Configuration](#8-windows-10-client-configuration)
+9. [iOS Client Configuration](#9-ios-client-configuration)
+10. [MacOS Client Configuration](#10-macos-client-configuration)
+11. [Android Client Configuration](#11-android-client-configuration)
 
 
 ---
@@ -262,7 +262,7 @@ if you wish. You can do this later, too. Click "Exit" when you're done
 
     > ![Easy Setup](images/wiz-3.png "Easy Setup")
 
-4. IPsec/L2TP/EtherIP/.. screen will appear. 
+4. <a name="psk"></a>IPsec/L2TP/EtherIP/.. screen will appear. 
     1. Check the "Enable L2TP Server Function (L2TP over IPSec)". 
     2. Ensure that all other check boxes are **unchecked**
     3. Note the IPsec Pre-shared key at the bottom. You can change it now or later if you wish
@@ -273,7 +273,7 @@ if you wish. You can do this later, too. Click "Exit" when you're done
  
     > ![Easy Setup](images/wiz-5.png "Easy Setup")
 
-6. VPN Easy Setup Tasks
+6. <a name="username-passowrd"></a>VPN Easy Setup Tasks
     1. Click "Create Users"
         1. In "User Name": Enter username for connection
         2. In "Password": Enter password for this user
@@ -389,7 +389,7 @@ by simply changing the connection type to Automatic.
     > ![Windows Setup](images/win-1.png "Windows Setup")
     
 4. Ensure that you select VPN type "L2TP/IPsec with pre-shared key" and enter the details for the connection
-   1. Pre-shared key (from step 5.4)
+   1. Pre-shared key ([from step 5.4](#psk))
    2. Username: Same username that you created (from step 5.6)
    2. Password: Same password that you created (from step 5.6)
    
