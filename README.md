@@ -390,8 +390,8 @@ by simply changing the connection type to Automatic.
     
 4. Ensure that you select VPN type "L2TP/IPsec with pre-shared key" and enter the details for the connection
    1. Pre-shared key ([from step 5.4](#psk))
-   2. Username: Same username that you created (from step 5.6)
-   2. Password: Same password that you created (from step 5.6)
+   2. Username: Same username that you created ([from step 5.6](#username-passowrd))
+   2. Password: Same password that you created ([from step 5.6](#username-passowrd))
    
     > ![Windows Setup](images/win-2.png "Windows Setup")
     
@@ -418,10 +418,10 @@ by simply changing the connection type to Automatic.
 4. Enter the connection details
     1. Description: Name of the connection
     2. Server: IP Address of the server (or hostname)
-    3. Account: Username from step 5.6
+    3. Account: Username from step ([from step 5.6](#username-passowrd))
     4. RSA SecureID: off
-    5. Password: Password from step 5.6
-    6. Secret: Pre-shared key from step 5.4
+    5. Password: Password from step ([from step 5.6](#username-passowrd))
+    6. Secret: Pre-shared key ([from step 5.4](#psk))
     
     > ![iOS Setup](images/ios-4.png "iOS Setup")
     
@@ -436,14 +436,14 @@ by simply changing the connection type to Automatic.
 
 2. In the Connection settings:
     1. Server Address: Put in the hostname or IP address
-    2. Account Name: Username from step 5.6
+    2. Account Name: Username ([from step 5.6](#username-passowrd))
     3. Click "Authentication Settings"
 
     > ![iOS Setup](images/macos-2.png "iOS Setup")
 
 3. In the Authentication Settings Screen
-    1. Enter the password from step 5.6
-    2. Shared Secret: Pre-shared key from step 5.4
+    1. Enter the password ([from step 5.6](#username-passowrd))
+    2. Shared Secret: Pre-shared key ([from step 5.4](#psk))
 
     > ![iOS Setup](images/macos-3.png "iOS Setup")
 
@@ -462,9 +462,9 @@ by simply changing the connection type to Automatic.
     3. Server address: IP or hostname of the VPN server
     4. L2TP Secret: leave empty
     5. IPSec Identifier: leave empty
-    6. IPSec pre shared key: Pre-shared key from step 5.4
-    7. Username: Username from step 5.6
-    8. Password: Password from step 5.6
+    6. IPSec pre shared key: Pre-shared key ([from step 5.4](#psk))
+    7. Username: Username ([from step 5.6](#username-passowrd))
+    8. Password: Password ([from step 5.6](#username-passowrd))
 
     > ![Android Setup](images/android-2.png "Android Setup")
 
