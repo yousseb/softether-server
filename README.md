@@ -204,6 +204,10 @@ sudo ufw allow 4500/udp
 sudo ufw allow 1723/tcp
 ```
 
+> NOTE: If you're using AWS or Azure, the port above will need to be open. 
+> <br/>* OpenSSH is listening on port 22 
+>
+
 Enable the firewall
 
 ```bash
@@ -319,6 +323,9 @@ sudo ufw allow http
 # In this example, I ran the following command
 sudo certbot certonly --standalone -n -d vpn225930509.softether.net --agree-tos --email "(my email address)"
 ```
+
+> NOTE: If you're using AWS or Azure, you'll need to open port 80 
+>
 
 The results were two files in:
 ```bash
