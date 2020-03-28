@@ -32,6 +32,7 @@ This will cost you about $5/month. The differences between this tutorial and buy
 9. [iOS Client Configuration](#9-ios-client-configuration)
 10. [MacOS Client Configuration](#10-macos-client-configuration)
 11. [Android Client Configuration](#11-android-client-configuration)
+12. [Ubuntu 19 Client Configuration](#12-ubuntu-19-client-configuration)
 
 
 ---
@@ -72,8 +73,8 @@ In this step, we will do the following:
 5. Add swap file
 6. Optimize server performance (slightly)
 
-For the next steps, you will need a Terminal window. If you are on Windows, the easiest way to get this is to the the "Git Bash"
-terminal which comes with the standard [Git for Windows](https://git-scm.com/download/win). Linux & Mac users can use the build-in 
+For the next steps, you will need a Terminal window. If you are on Windows, the easiest way to get this is to use the "Git Bash"
+terminal which comes with the standard [Git for Windows](https://git-scm.com/download/win). Linux & Mac users can use the built-in 
 Terminal.  
 
 ### 2.1 Update Ubuntu
@@ -305,6 +306,15 @@ if you wish. You can do this later, too. Click "Exit" when you're done
 
 10. You're all set
 
+At this point, you should test the IPSec/L2TP connection by configuring a client.
+Try any of the following clients, then continue to the configuration of the "Let's Encrypt" certificate in  [Certificate Setup](#6-certificate-setup).
+ 
+1. [Windows 10 Client Configuration](#8-windows-10-client-configuration)
+2. [iOS Client Configuration](#9-ios-client-configuration)
+3. [MacOS Client Configuration](#10-macos-client-configuration)
+4. [Android Client Configuration](#11-android-client-configuration)
+5. [Ubuntu 19 Client Configuration](#12-ubuntu-19-client-configuration)
+
 ---
 ##  6. Certificate Setup
 
@@ -481,4 +491,39 @@ by simply changing the connection type to Automatic.
 
 3. Save and Connect
 
+---
+## 12. Ubuntu 19 Client Configuration
 
+1. Open a Terminal and install IPSec/L2TP for Network Manager
+    ```bash
+    sudo apt install network-manager-l2tp network-manager-l2tp-gnome
+    ```
+
+2. Open Settings
+    1. Click "Network"
+    2. On the VPN frame, click "+"
+    3. Choose "Layer 2 Tunnelling Protocol (L2TP)"
+    > ![Ubuntu Setup](images/ubuntu-1.png "Ubuntu Setup")
+
+3. In the "ADD VPN" dialog
+    1. Name: Connection Name
+    2. Gateway:  IP or hostname of the VPN server
+    3. Username: Username ([from step 5.6](#username-passowrd))
+    4. Password: Password ([from step 5.6](#username-passowrd))     
+    > ![Ubuntu Setup](images/ubuntu-2.png "Ubuntu Setup")
+
+4. Click "IPSec Settings"
+    1. Check "Enable IPSec tunnel to L2TP host"
+    2. Gateway ID: Leave empty
+    3. Pre-shared key:  Pre-shared key ([from step 5.4](#psk))
+    4. Phase 1 Algorithms: Enter `aes256-sha1-ecp384,aes128-sha1-ecp256,3des-sha1-modp1024!`
+    5. Phase 2 Algorithms: Enter `aes256-sha1,aes128-sha1,3des-sha1!`
+    > ![Ubuntu Setup](images/ubuntu-3.png "Ubuntu Setup")
+
+5. Click "PPP Settings"
+    1. Check "Use Point-to-Point encryption (MPPE)"
+    2. Check "Allow stateful encryption"
+    3. Click OK
+    > ![Ubuntu Setup](images/ubuntu-4.png "Ubuntu Setup")
+
+6. Save and Connect
