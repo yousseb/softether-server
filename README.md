@@ -53,7 +53,7 @@ This will cost you about $5/month. The differences between this tutorial and buy
 
 ### Which Region Do I Pick?
 
-This depends on why you need the VPN. If you are interested in *speed only*, pick **Frankfurt**. The VPN server will make your
+For the Middle East: This depends on why you need the VPN. If you are interested in *speed only*, pick **Frankfurt**. The VPN server will make your
 geolocation appear to websites and services as if it was the location of the VPN server. If you wish to *appear as if you 
 are in the United States*, then pick **New York**.  
 
