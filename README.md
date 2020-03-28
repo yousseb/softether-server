@@ -58,7 +58,7 @@ are in the United States*, then pick **New York**.
 
 ### How Does It Look Like?
 
-![DigitalOcean Create Droplet](images/droplet_options.png "Create Droplet Screenshot")
+> ![DigitalOcean Create Droplet](images/droplet_options.png "Create Droplet Screenshot")
 
 ---
 ## 2. Performing Initial Server Setup 
@@ -232,7 +232,7 @@ sudo service softether-vpnserver start
 Now go to [http://www.softether-download.com/en.aspx?product=softether](http://www.softether-download.com/en.aspx?product=softether) and download 
 **SoftEther VPN Server Manager for Windows** without installers - if you're on Mac, you may download the Mac version. Linux users should download
 the Windows version and run it with `wine`. This is how my download screen looks like after selecting the appropriate options.
-![SoftEther VPN Server Manager for Windows Download](images/softether-vpnmgr-exe.png "SoftEther VPN Server Manager for Windows Download")   
+> ![SoftEther VPN Server Manager for Windows Download](images/softether-vpnmgr-exe.png "SoftEther VPN Server Manager for Windows Download")   
 
 1. Extract the zip file 
 2. Run `vpnsmgr.exe`
@@ -240,7 +240,7 @@ the Windows version and run it with `wine`. This is how my download screen looks
 4. Enter a name for your "Setting Name" field
 5. Add the IP Address of your Droplet in the "Host Name" field
 6. Click OK
-![New Setting Screen](images/new-setting.png "New Setting Screen")
+> ![New Setting Screen](images/new-setting.png "New Setting Screen")
 
 You should now return to the main screen. Click "Connect". You will be prompted to create a password for managing the 
 VPN server. Please ensure that you create a secure password. Once this is done, the GUI will automatically start a configuration wizard.
@@ -250,27 +250,27 @@ VPN server. Please ensure that you create a secure password. Once this is done, 
 
 1. Once the Wizard starts, select the option for "Remote Access VPN Server"
 
-    ![Easy Setup](images/wiz-1.png "Easy Setup")
+    > ![Easy Setup](images/wiz-1.png "Easy Setup")
 
 2. The wizard will ask you to initialize a HUB, press OK and enter the hub name
 
-    ![Easy Setup](images/wiz-2.png "Easy Setup")
+    > ![Easy Setup](images/wiz-2.png "Easy Setup")
 
 3. The wizard will show the Dynamic DNS function. You may enter an easy name for you server for you to remember 
 if you wish. You can do this later, too. Click "Exit" when you're done
 
-    ![Easy Setup](images/wiz-3.png "Easy Setup")
+    > ![Easy Setup](images/wiz-3.png "Easy Setup")
 
 4. IPsec/L2TP/EtherIP/.. screen will appear. 
     1. Check the "Enable L2TP Server Function (L2TP over IPSec)". 
     2. Ensure that all other check boxes are **unchecked**
     3. Note the IPsec Pre-shared key at the bottom. You can change it now or later if you wish
     
-    ![Easy Setup](images/wiz-4.png "Easy Setup")
+    > ![Easy Setup](images/wiz-4.png "Easy Setup")
 
 5. VPN Azure Service: Click "Disable VPN Azure" and then click "OK"
  
-    ![Easy Setup](images/wiz-5.png "Easy Setup")
+    > ![Easy Setup](images/wiz-5.png "Easy Setup")
 
 6. VPN Easy Setup Tasks
     1. Click "Create Users"
@@ -279,24 +279,24 @@ if you wish. You can do this later, too. Click "Exit" when you're done
         3. Click OK
     2. In Set Local Bright, ensure that "eth0" is selected and press OK
     
-    ![Easy Setup](images/wiz-6.png "Easy Setup")
+    > ![Easy Setup](images/wiz-6.png "Easy Setup")
   
     3. You may receive a warning regarding Promiscuous Mode. You can safely ignore this warning.
      
-    ![Easy Setup](images/wiz-6.5.png "Easy Setup")
+    > ![Easy Setup](images/wiz-6.5.png "Easy Setup")
  
 7. All done
 
-![Easy Setup](images/wiz-7.png "Easy Setup")
+    > ![Easy Setup](images/wiz-7.png "Easy Setup")
 
 8. Click "Manage Virtual Hub"
 
-![Hub Manager](images/hub-manager.png "Hub Manager")
+    > ![Hub Manager](images/hub-manager.png "Hub Manager")
 
 9. Click "Virtual NAT and Virtual DHCP Server (Secure NAT)"
     1. In this screen, click "Enable SecureNAT"
     
-    ![Secure NAT](images/secure-nat.png "Secure NAT")
+    > ![Secure NAT](images/secure-nat.png "Secure NAT")
 
 10. You're all set
 
@@ -316,34 +316,34 @@ TODO
 
 3. Click "Add a VPN Connection" 
 
-    ![Windows Setup](images/win-1.png "Windows Setup")
+    > ![Windows Setup](images/win-1.png "Windows Setup")
     
 4. Ensure that you select VPN type "L2TP/IPsec with pre-shared key" and enter the details for the connection
    1. Pre-shared key (from step 5.4)
    2. Username: Same username that you created (from step 5.6)
    2. Password: Same password that you created (from step 5.6)
    
-    ![Windows Setup](images/win-2.png "Windows Setup")
+    > ![Windows Setup](images/win-2.png "Windows Setup")
     
 5. Click "Save"
 
 6. Click the connection and click "Connect"
 
-    ![Windows Setup](images/win-3.png "Windows Setup")
+    > ![Windows Setup](images/win-3.png "Windows Setup")
 
 ---
 ## 9. iOS Client Configuration
 1. Open the Settings App, tap "VPN" and tap "Add VPN Configuration"
 
-    ![iOS Setup](images/ios-1.png "iOS Setup")
+    > ![iOS Setup](images/ios-1.png "iOS Setup")
 
 2. Tap "Type" to change the VPN type
 
-    ![iOS Setup](images/ios-2.png "iOS Setup")
+    > ![iOS Setup](images/ios-2.png "iOS Setup")
 
 3. Tap "L2TP" to select L2TP as the connection type
 
-    ![iOS Setup](images/ios-3.png "iOS Setup")
+    > ![iOS Setup](images/ios-3.png "iOS Setup")
 
 4. Enter the connection details
     1. Description: Name of the connection
@@ -353,7 +353,7 @@ TODO
     5. Password: Password from step 5.6
     6. Secret: Pre-shared key from step 5.4
     
-    ![iOS Setup](images/ios-4.png "iOS Setup")
+    > ![iOS Setup](images/ios-4.png "iOS Setup")
     
 ---
 ## 10. MacOS Client Configuration
