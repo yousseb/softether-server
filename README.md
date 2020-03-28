@@ -427,7 +427,28 @@ by simply changing the connection type to Automatic.
     
 ---
 ## 10. MacOS Client Configuration
-TODO
+1. Open the Network Settings and click the "+" sign at the bottom. 
+    1. Interface: VPN
+    2. VPN Type: L2TP over IPSec
+    3. Service Name: Type in the connection name
+
+    > ![iOS Setup](images/macos-1.png "iOS Setup")
+
+2. In the Connection settings:
+    1. Server Address: Put in the hostname or IP address
+    2. Account Name: Username from step 5.6
+    3. Click "Authentication Settings"
+
+    > ![iOS Setup](images/macos-2.png "iOS Setup")
+
+3. In the Authentication Settings Screen
+    1. Enter the password from step 5.6
+    2. Shared Secret: Pre-shared key from step 5.4
+
+    > ![iOS Setup](images/macos-3.png "iOS Setup")
+
+4. Click Apply
+5. Click Connect
 
 ---
 ## 11. Android Client Configuration
