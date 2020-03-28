@@ -16,6 +16,7 @@ This will cost you about $5/month. The differences between this tutorial and buy
 1. You can create unlimited number of accounts for friends and family
 2. If you're a business, you can create accounts for the whole company
 3. In cases where VPN providers are blocker by IP range, your Droplet is not within that range
+4. In case where specific protocols are blocked, you can use SSTP or IP-over-DNS 
 
 
 ## Table of contents
@@ -24,7 +25,7 @@ This will cost you about $5/month. The differences between this tutorial and buy
 2. Performing Initial Server Setup
 3. Server Hardening
 4. SoftEther Server Installation
-5. IPSEC/L2TP Setup (SoftEther Server Administration GUI)
+5. IPsec/L2TP Setup (SoftEther Server Administration GUI)
 6. Certificate Setup
 7. SSTP Setup
 8. Windows Client Configuration
@@ -302,11 +303,80 @@ if you wish. You can do this later, too. Click "Exit" when you're done
 
 ---
 ##  6. Certificate Setup
-TODO
+
+The hostname that I got assigned is `vpn225930509.softether.net`. You can check yours from the GUI by clicking 
+"Dynamic DNS Setting" in the "Virtual HUB Manager" (Step 5.7)
+
+We will also need a valid email address. Let's use this value in the commands below. 
+
+```bash
+sudo apt -y install certbot
+sudo ufw allow http 
+
+# Then run the command
+# sudo certbot certonly --standalone -n -d (your host name) --agree-tos --email "(your email address)"
+
+# In this example, I ran the following command
+sudo certbot certonly --standalone -n -d vpn225930509.softether.net --agree-tos --email "(my email address)"
+```
+
+The results were two files in:
+```bash
+/etc/letsencrypt/live/vpn225930509.softether.net/fullchain.pem
+/etc/letsencrypt/live/vpn225930509.softether.net/privkey.pem
+``` 
+
+> NOTE:  **YOUR PATH WILL BE DIFFERENT. IT WILL BE BASED ON YOUR HOSTNAME** 
+> 
+>The format is:
+>
+>   `/etc/letsencrypt/live/< HOST NAME >/fullchain.pem`
+>
+>   `/etc/letsencrypt/live/< HOST NAME >/privkey.pem`
+
+Let's load those two files:
+
+```bash
+vpncmd localhost:5555 /server /CMD ServerCertSet /LOADCERT:/etc/letsencrypt/live/vpn225930509.softether.net/fullchain.pem /LOADKEY:/etc/letsencrypt/live/vpn225930509.softether.net/privkey.pem
+```
+
+Let's Encrypt will provide us with a three month certificate. Let's ensure that we renew in time... 
+
+```bash
+sudo mcedit /etc/cron.monthly/renew_cert.sh
+```
+
+1. Copy and paste the text into the file and replace the missing fields.
+    ```bash
+    #!/bin/sh
+    certbot renew
+    vpncmd localhost:5555 /server /PASSWORD:[*** YOUR SERVER PASSWORD ***] /CMD ServerCertSet /LOADCERT:/etc/letsencrypt/live/[*** YOUR SERVER NAME ***]/fullchain.pem /LOADKEY:/etc/letsencrypt/live/[*** YOUR SERVER NAME ***]/privkey.pem
+    ```
+2. Press `F2` to save
+3. Press `F10` to exit
+
+Let's test the renewal script
+```bash
+chmod +x /etc/cron.monthly/renew_cert.sh
+/etc/cron.monthly/renew_cert.sh
+```
+The script should run and say that
+1. The cert doesn't need to be updated.
+2. The cert (in this case, the one that currently exists) has been loaded.
+If this is the case, your server is ready to be used with SSTP and even current L2TP/IPSec is also using the new "real" cert..
 
 ---
 ## 7. SSTP Setup
-TODO
+
+In the main script for Server Manager, click "OpenVPN / MS-SSTP Setting". It should open the following screen
+
+   > ![SSTP Setup](images/sstp.png "SSTP Setup")
+
+Ensure the "Enable MS-SSTP VPN Clone Server Function" is checked and click OK. You can now use this from Windows 7 and above
+by simply changing the connection type to Automatic. 
+
+   > Note: When you connect from Windows, you must use the hostname instead of the IP so that SSL verification doesn't fail
+   > Note for Mac users: There are multiple SSTP clients available for download that you can use with this feature. 
 
 ---
 ## 8. Windows 10 Client Configuration
