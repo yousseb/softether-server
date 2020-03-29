@@ -136,7 +136,7 @@ sudo mcedit /etc/ssh/sshd_config
 If you made mistakes or typos, press `ESC`, do not save and try again
 ```bash
 sudo service sshd restart
-   # Leave this Window Optn
+   # Leave this Window Open
 ```
 
 In a new Terminal, let's try and see if our configuration worked
@@ -283,7 +283,7 @@ if you wish. You can do this later, too. Click "Exit" when you're done
         1. In "User Name": Enter username for connection
         2. In "Password": Enter password for this user
         3. Click OK
-    2. In Set Local Bright, ensure that "eth0" is selected and press OK
+    2. In "Set Local Bridge", ensure that "eth0" is selected and press OK
     
     > ![Easy Setup](images/wiz-6.png "Easy Setup")
   
@@ -360,7 +360,7 @@ Let's load those two files:
 vpncmd localhost:5555 /server /CMD ServerCertSet /LOADCERT:/etc/letsencrypt/live/vpn225930509.softether.net/fullchain.pem /LOADKEY:/etc/letsencrypt/live/vpn225930509.softether.net/privkey.pem
 ```
 
-Let's Encrypt will provide us with a three month certificate. Let's ensure that we renew in time... 
+Let's Encrypt will provide us with a three month certificate. Let's ensure that we renew on time... 
 
 ```bash
 sudo mcedit /etc/cron.monthly/renew_cert.sh
